@@ -143,10 +143,7 @@ def PlayGame(FrontEnd,BackEnd):
 def genboard():
     import random
     def crrangecheck(x):
-        if int(x) not in range(11) or int(x) in range(5):
-            return 0
-        else:
-            return 1
+        return 1 if 5 <= int(x) <= 10 else 0
     print('Enter size of the board')
     print('Number of columns (5-10):')
     columns=input()
