@@ -197,7 +197,16 @@ def loadgame():
     print('Enter Password')
     Password=input()
     import pickle
-    x=pickle.load(open(UserName,mode='rb'))
+    while(True):
+        try:
+            x=pickle.load(open(UserName,mode='rb'))
+            break
+        except:
+            print("Unable to load file. Make sure the user name is correct.")
+            print('Enter User Name')
+            UserName=input()
+            print('Enter Password')
+            Password=input()
     if Password==x[0]:
         PlayGame(FrontEnd=x[1],BackEnd=x[2])
     else:
@@ -207,7 +216,6 @@ def viewhelp():
     print("""
 Minesweeper is a deceptively simple test of memory and reasoning. The goal: find the empty squares and avoid the mines.
 Sounds easy, right?
-
 The object:
     Find the empty squares while avoiding the mines. The faster you clear the board, the better your score.
     
