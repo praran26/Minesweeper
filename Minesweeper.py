@@ -73,7 +73,7 @@ def PlayGame(FrontEnd,BackEnd):
                 j='0'+j
             j=' '+j+' '
             print(j,end=' ')
-        print('\n'+'-'*(columns*3+(columns-1)*2+8))
+        print('\n'+'-'*(columns*5+6))
         for row in range(rows):
             x=str(row+1)
             if len(x)==1:
@@ -81,7 +81,7 @@ def PlayGame(FrontEnd,BackEnd):
             print(x,end='\t')
             for column in range(columns):
                 print(board[row][column], end='  ')
-            print('\n'+'-'*(columns*3+(columns-1)*2+8))
+            print('\n'+'-'*(columns*5+6))
         return None
     print("Enter 'save' to save the game, 'quit' to quit the game and 'help' to view help")
     print("Enter the co-orddinates of tile to uncover/flag separated by comma. For example, '4,1' will uncover tile in 4th column and 1st row.")
